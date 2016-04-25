@@ -1,26 +1,27 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 class TestCase:
-	def helloWorld(self):
-		print 'Hello World'
 
-	def hashStr(self, str):
-		hashTable = {}
+    def helloWorld(self):
+        print 'Hello World'
 
-		# hash each char in the str
-		for item in str: 
-			hashTable[item] = True 
+    def hashStr(self, str):
+        hashTable = {}
 
-		return hashTable
+        # hash each char in the str
+        for item in str:
+            hashTable[item] = True
 
-	def remove(self, str1, str2): 
-		hashTable = self.hashStr(str2)
+        return hashTable
 
-		newStr = ''
-		for item in str1:
-			if not hashTable.has_key(item):
-				newStr += item
- 
-		return newStr
+    def remove(self, str1, str2):
+        hashTable = self.hashStr(str2)
+
+        newStr = ''
+        for item in str1:
+            if item not in hashTable:
+                newStr += item
+
+        return newStr
 
 testCase = TestCase()
 print testCase.remove('abcdddghkdffeayweisfxxxdds', 'abcdefaaidasbkd')
